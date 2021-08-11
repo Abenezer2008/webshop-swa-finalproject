@@ -2,8 +2,6 @@ logging:
   file:
     name: C:/springcloudtraining/temp/spring-boot-elk.log
 
-server:
-  port: 8091
 
 spring:
   data:
