@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: APIGateway
+  cloud:
+    gateway:
+      routes:
+        - id: CustomerModule
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/customers/**
+        - id: ProductModule
+          uri: http://localhost:8091/
+          predicates:
+            - Path=/products/**
+        - id: CartCommandModule
+          uri: http://localhost:8092/
+          predicates:
+            - Path=/carts/command/**
+        - id: CartQueryModule
+          uri: http://localhost:8093/
+          predicates:
+            - Path=/carts/query/**
+        - id: orderModule
+          uri: http://localhost:8094/
+          predicates:
+            - Path=/orders/**
+
+
+server:
+  port: 8080
